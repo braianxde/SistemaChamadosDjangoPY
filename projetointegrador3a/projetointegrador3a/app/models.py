@@ -73,3 +73,21 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.name
+
+class Equipamento(models.Model):
+    id_equipamento = models.AutoField(primary_key = True)    
+    nome = models.CharField(max_length = 255)
+    patrimonio = models.CharField(max_length = 100)
+    descricao = models.CharField(max_length = 999)
+
+    class Meta:
+        db_table = 'equipamento'
+    
+
+
+
+
+
+
+
+

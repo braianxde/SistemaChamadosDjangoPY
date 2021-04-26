@@ -4,7 +4,7 @@ Definition of forms.
 
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
-from app.models import Chamado, Usuario
+from app.models import Chamado, Usuario, Equipamento    
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -29,3 +29,12 @@ class ChamadosForm(forms.ModelForm):
             'data_abertura' : forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'status' : forms.Select(attrs={'class': 'form-control'}),
             'id_usuario' : forms.Select(choices = Usuario.objects.values_list('id_usuario', 'nome'), attrs={'class': 'form-control'})}
+
+class EquipamentosForm(forms.ModelForm):
+    class Meta:
+        model = Equipamento 
+        fields = ['nome','patrimonio','descricao']
+        widgets = {            
+            'nome' : forms.TextInput(attrs={'class':'form-control'}), 
+            'patrimonio' : forms.TextInput(attrs={'class': 'form-control'}),
+            'descricao' : forms.Textarea(attrs={'class':'form-control'})}

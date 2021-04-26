@@ -6,6 +6,7 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from app.forms import ChamadosForm
+from app.forms import EquipamentosForm
 
 def home(request):
     """Renders the home page."""
@@ -79,3 +80,41 @@ def chamados(request):
             'year':datetime.now().year,
         }
     )
+
+def equipamentos(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+
+            
+    return render(
+        request,
+        'app/equipamentos.html',
+        {
+            'title':"Equipamentos",
+            'message':'Aqui vai listar os equipamentos',
+            'equipamento': equipamentos
+            }
+        )
+
+def addequipamentos(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+
+    form = EquipamentosForm()
+
+    if request.method == 'POST':
+       form = EquipamentosForm(request.POST)
+       if form.is_valid():
+            form.save()
+            return redirect('addequipamentos')      
+    
+    return render(
+        request,
+        'app/addequipamentos.html',
+        {
+            'title':"Adicionar Equipamento",
+            'message':'Criação de um novo equipamento',
+            'year':datetime.now().year,
+            'form': form
+            }
+        )
