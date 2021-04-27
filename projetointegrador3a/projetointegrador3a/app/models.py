@@ -71,5 +71,16 @@ class Usuario(models.Model):
     class Meta:
         db_table = 'usuario'
 
+
+
     def __str__(self):
         return self.name
+
+class Tecnico(models.Model):
+    id_tecnico = models.AutoField(primary_key = True)
+    nome = models.CharField(max_length = 255)
+    id_usuario = models.IntegerField(null=True)
+    id_area_tec = models.IntegerField(choices=TECH_AREA_CHOICES)
+
+    class Meta:
+        db_table = 'tecnico'

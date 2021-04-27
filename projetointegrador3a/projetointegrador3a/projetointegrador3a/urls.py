@@ -15,6 +15,7 @@ urlpatterns = [
     path('chamados/', views.chamados, name='chamados'),
     path('addchamados/', views.addchamados, name='addchamados'),
     path('addusers/', views.addusers, name='addusers'),
+    path('tecnico/', views.tecnico, name='tecnico'),
     path('login/',
          LoginView.as_view
          (

@@ -79,3 +79,15 @@ def chamados(request):
             'year':datetime.now().year,
         }
     )
+def tecnico(request):
+    """Renders the contact page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/tecnico.html',
+        {
+            'title':'tecnico',
+            'message':'Listagem e criação de tecnicos',
+            'year':datetime.now().year,
+        }
+    )
