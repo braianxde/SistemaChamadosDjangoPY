@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
-from app.forms import ChamadosForm
+from app.forms import ChamadosForm, Area_TecnicaForm
 
 def home(request):
     """Renders the home page."""
@@ -77,5 +77,27 @@ def chamados(request):
             'title':'Chamados',
             'message':'Verifique os chamados abertos ou abra um chamado clicando no botao Abrir Chamado',
             'year':datetime.now().year,
+        }
+    )
+
+
+def addarea_tecnica(request):
+    """Renders the contact page."""
+    assert isinstance(request, HttpRequest)
+
+    form = Area_TecnicaForm()
+    if request.method == 'POST':
+       form = Area_TecnicaForm(request.POST)
+       if form.is_valid():
+            form.save()
+            return redirect('addarea_tecnica')
+
+    return render(
+        request,
+        'app/addarea_tecnica.html',
+        {
+            'title':'Crição de area tecnica',
+            'year':datetime.now().year,
+            'form': form
         }
     )

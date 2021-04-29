@@ -14,6 +14,7 @@ urlpatterns = [
     path('users/', views.users, name='users'),
     path('chamados/', views.chamados, name='chamados'),
     path('addchamados/', views.addchamados, name='addchamados'),
+    path('addarea_tecnica/', views.addarea_tecnica, name='addarea_tecnica'),
     path('addusers/', views.addusers, name='addusers'),
     path('login/',
          LoginView.as_view

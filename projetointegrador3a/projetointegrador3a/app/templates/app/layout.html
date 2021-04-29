@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    {% load staticfiles %}
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
@@ -28,6 +28,7 @@
                     <li><a href="{% url 'users' %}">Usuarios</a></li>
                     <li><a href="{% url 'addusers' %}">Criar Usuario</a></li>
                     <li><a href="{% url 'addchamados' %}">Criar Chamados</a></li>
+                    <li><a href="{% url 'addarea_tecnica' %}">Criar area tecnica</a></li>
                 </ul>
                 {% include 'app/loginpartial.html' %}
             </div>

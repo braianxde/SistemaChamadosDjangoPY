@@ -29,12 +29,6 @@ TECHNICIAN_CHOICES = (
     (2, 'Tecnico Paulo'),
 )
 
-TECH_AREA_CHOICES = (
-    (1, 'Administrativo'),
-    (2, 'Financeiro'),
-    (3, 'TI'),
-    (4, 'Almox'),
-)
 
 TYPE_USER_CHOICES = (
     (1, 'Comum'),
@@ -52,7 +46,7 @@ class Chamado(models.Model):
     id_equipamento = models.IntegerField(choices=EQUIPMENT_CHOICES,null=True)
     id_usuario = models.IntegerField(null=True)
     id_tecnico = models.IntegerField(choices=TECHNICIAN_CHOICES, null=True)
-    id_area_tec = models.IntegerField(choices=TECH_AREA_CHOICES, null=True)
+    id_area_tec = models.IntegerField(null=True)
 
     class Meta:
         db_table = 'chamado'
@@ -66,8 +60,33 @@ class Usuario(models.Model):
     tipo = models.IntegerField(choices=TYPE_USER_CHOICES)
     token = models.CharField(max_length = 255)
     id_centro_custo = models.IntegerField(choices=TECHNICIAN_CHOICES)
-    id_area_tec = models.IntegerField(choices=TECH_AREA_CHOICES)
+    id_area_tec = models.IntegerField()
 
+    class Meta:
+        db_table = 'usuario'
+
+    def __str__(self):
+        return self.name
+
+
+class Area_Tecnica(models.Model):
+    id_area_tec = models.AutoField(primary_key = True)
+    area_tec = models.CharField(max_length = 45)
+
+    class Meta:
+        db_table = 'area_tecnica'
+
+    def __str__(self):
+        return self.name
+
+class Usuario(models.Model):
+    id_usuario = models.AutoField(primary_key = True)
+    cpf = models.IntegerFiel(max_lemgth = 11)
+    nome = models.CharField(max_length = 100)
+    cargo = models.CharField(max_length = 50)
+    departamento = models.CharField(max_length = 50)
+    endereco = models.IntegerField(max_length = 200)
+    
     class Meta:
         db_table = 'usuario'
 
