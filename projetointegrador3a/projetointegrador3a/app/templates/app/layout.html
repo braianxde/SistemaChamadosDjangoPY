@@ -39,11 +39,11 @@
 					SoftDesk Sys				
 				</a>
 			<ul class="nav navbar-nav">
-				<li><a href="{% url 'home' %}">Home</a></li>
 				<li><a href="{% url 'chamados' %}">Chamados</a></li>
+				<li><a href="{% url 'areastecnicas' %}">Areas Tecnicas</a></li>
+				<li><a href="{% url 'equipamentos' %}">Equipamentos</a></li>
+				<li><a href="{% url 'tecnicos' %}">Tecnicos</a></li>
 				<li><a href="{% url 'users' %}">Usuarios</a></li>
-				<li><a href="{% url 'addusers' %}">Criar Usuario</a></li>
-				<li><a href="{% url 'addchamados' %}">Criar Chamados</a></li>
 			</ul>
 			{% include 'app/loginpartial.html' %}
 		  </div>

@@ -1,14 +1,28 @@
 {% extends "app/layout.html" %}
 
 {% block content %}
-
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-
+<div style="text-align:center; padding:50px">
+    <button class="btn"><a href="{% url 'addchamados' %}">Criar Chamados</a></button>
+</div>
 <div>
-    <p>
-        Aqui devera ter uma listae de chamados e um botao
-    </p>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">ASUNTO</th>
+              <th scope="col">DATA ABERTURA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for chamado in chamados %}
+            <tr style="height:40px">
+                <td>{{ chamado.id_chamado }}</td>
+                <td>{{ chamado.assunto }}</td>
+                <td>{{ chamado.data_abertura }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
 </div>
 
 {% endblock %}

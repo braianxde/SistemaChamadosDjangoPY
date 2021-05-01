@@ -57,11 +57,16 @@
     <Folder Include="projetointegrador3a\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\addtecnicos.html" />
+    <Content Include="app\templates\app\addequipamentos.html" />
     <Content Include="app\templates\app\addusers.html" />
     <Content Include="app\templates\app\addchamados.html" />
+    <Content Include="app\templates\app\addareatecnica.html" />
+    <Content Include="app\templates\app\areastecnicas.html" />
+    <Content Include="app\templates\app\tecnicos.html" />
+    <Content Include="app\templates\app\equipamentos.html" />
     <Content Include="app\templates\app\users.html" />
     <Content Include="requirements.txt" />
-    <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
     <Content Include="app\static\app\content\site.css" />

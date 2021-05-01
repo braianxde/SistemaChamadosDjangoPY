@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div style="text-align:center; padding:50px">
+    <button class="btn"><a href="{% url 'addtecnicos' %}">Criar Tecnico</a></button>
+</div>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">ASUNTO</th>
+              <th scope="col">DATA ABERTURA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tecnico in tecnicos %}
+            <tr style="height:40px">
+                <td>{{ tecnico.id_tecnico }}</td>
+                <td>{{ tecnico.nome }}</td>
+                <td>{{ tecnico.id_area_tec }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

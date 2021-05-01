@@ -1,0 +1,26 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div style="text-align:center; padding:50px">
+    <button class="btn"><a href="{% url 'addareatecnica' %}">Criar Area Tecnica</a></button>
+</div>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOME</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for areatecnica in areastecnicas %}
+            <tr style="height:40px">
+                <td>{{ areatecnica.id_area_tec }}</td>
+                <td>{{ areatecnica.area_tec }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -13,7 +13,13 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('users/', views.users, name='users'),
     path('chamados/', views.chamados, name='chamados'),
+    path('areastecnicas/', views.areastecnicas, name='areastecnicas'),
+    path('equipamentos/', views.equipamentos, name='equipamentos'),
+    path('tecnicos/', views.tecnicos, name='tecnicos'),
     path('addchamados/', views.addchamados, name='addchamados'),
+    path('addareatecnica/', views.addareatecnica, name='addareatecnica'),
+    path('addequipamentos/', views.addequipamentos, name='addequipamentos'),
+    path('addtecnicos/', views.addtecnicos, name='addtecnicos'),
     path('addusers/', views.addusers, name='addusers'),
     path('login/',
          LoginView.as_view

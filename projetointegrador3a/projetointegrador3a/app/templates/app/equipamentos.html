@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div style="text-align:center; padding:50px">
+    <button class="btn" type="button"><a href="{% url 'addequipamentos' %}">Criar Equipamento</a></button>
+</div>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOME</th>
+              <th scope="col">PATRIMONIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipamento in equipamentos %}
+            <tr style="height:40px">
+                <td>{{ equipamento.id_equipamento }}</td>
+                <td>{{ equipamento.nome }}</td>
+                <td>{{ equipamento.patrimonio }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
